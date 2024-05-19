@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useIsAuth } from '../../hooks/useIsAuth'
 function Login() {
-    const naviagte=useNavigate()
+    const navigate=useNavigate()
     const [cdls, setCredentials] = useState({email: "", password: ""})
     const [loading, setLoading] = useState(true)
-    useIsAuth(()=> {naviagte("/")},()=>{setLoading(false)})
+    useIsAuth(()=> {navigate("/")},()=>{setLoading(false)})
     const onChange=(e)=>{
         setCredentials({...cdls, [e.target.name]: e.target.value})
     }
@@ -19,11 +19,11 @@ function Login() {
         let response = await request.json()
         if(response.response==="success")
         {
-            naviagte("/")
+            navigate("/")
         }
     }
     if(loading)
-        return <h1>Loading...</h1>
+        return null
   return (
     <div className='login-container'>
         <div className='login'>

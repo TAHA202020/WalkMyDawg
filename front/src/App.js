@@ -3,6 +3,7 @@ import Register from "./components/Register/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Logout from "./components/Logout/Logout";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Dashboard/>} />
         <Route path="/logout" element={<Logout/>} />
+        <Route path="/profile" element= {<Profile/>}>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

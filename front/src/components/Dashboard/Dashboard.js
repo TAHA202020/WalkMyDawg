@@ -1,6 +1,7 @@
 import React ,{useState}from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useIsAuth } from '../../hooks/useIsAuth'
+import Navbar from './Navbar/Navbar'
 
 function Dashboard() {
     const naviagte=useNavigate()
@@ -11,8 +12,8 @@ function Dashboard() {
     if(loading)
         return(<h1>Loading</h1>)
     return (<>
-    <div>Dashboard</div>
-    <Link to="/logout">Logout</Link>
+    <Navbar />
+    
     </>)
 }
 

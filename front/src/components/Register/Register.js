@@ -1,9 +1,14 @@
 import React, { useState ,useRef} from 'react'
 import { Link } from 'react-router-dom'
-
+import { useIsAuth } from '../../hooks/useIsAuth'
+import { useNavigate } from 'react-router-dom'
 function Register() {
     const [Credentials, setCredentials] = useState({email: "", password: ""})
+    const [loading, setLoading] = useState(true)
+    let navigate=useNavigate()
     const repeatPassword=useRef()
+
+    useIsAuth(()=> {navigate("/")},()=>{setLoading(false)})
     const onChange=(e)=>{
         setCredentials({...Credentials, [e.target.name]: e.target.value})
     }
@@ -16,6 +21,7 @@ function Register() {
         let response = await request.json()
         console.log(response)
     }
+    if(loading) return null
   return (
     <div className='login-container'>
         <div className='login'>
