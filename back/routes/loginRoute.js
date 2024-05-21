@@ -11,7 +11,7 @@ router.post("/",async (req,res)=>{
     }
     connection.query("select id,email,  name, last_name , pass_hash from client where email='"+req.body.email+"'",async (err,result)=>{
         if(err) throw err
-        if(result.length<0) return res.send({error:"email doesn't exist exists"})
+        if(result.length<=0) return res.send({error:"email doesn't exist exists"})
         let compareResult=await encryptPassword.comparePassword(req.body.password,result[0].pass_hash)
         if(compareResult){
             console.log(result[0].id)

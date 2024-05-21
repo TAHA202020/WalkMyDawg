@@ -3,7 +3,7 @@ const connection=require("../db")
 const router=express.Router();
 
 router.get("/",async (req,res)=>{
-    connection.query("select * from client where id='"+req.session.user.id+"'",(err,result)=>
+    connection.query("select name ,last_name,email from client where id='"+req.session.user.id+"'",(err,result)=>
         {
             if(err) throw err
 

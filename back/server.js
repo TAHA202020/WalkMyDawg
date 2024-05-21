@@ -1,15 +1,16 @@
 const express=require('express');
 const cors=require('cors');
 const cookieParser=require('cookie-parser');
-const middlewareauth=require("./middleware/middleware");
 const expressSession=require('express-session');
 
+
+//Routes
 const getUserRoute=require('./routes/getUserRoute');
 const loginRoute=require('./routes/loginRoute');
 const registerRoute=require('./routes/registerRoute');
 const logoutRoute=require('./routes/logoutRoute');
-
-
+const updateUserRoute=require('./routes/updateUserRoute');
+//App
 const app=express();
 
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
@@ -21,9 +22,10 @@ app.use("/api/register",registerRoute);
 app.use("/api/login",loginRoute);
 app.use("/api/logout",logoutRoute)
 app.use("/api/user-info",getUserRoute)
+app.use("/api/update-user",updateUserRoute)
 
 
-app.get("/",middlewareauth,(req,res)=>
+app.get("/",(req,res)=>
     {
         console.log("here")
         res.send({response:"success"})

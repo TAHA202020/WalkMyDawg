@@ -13,7 +13,7 @@ function Profile() {
         <div className='profile-info'>
           <div className='img-name'>
             <img alt='user' src={user} className='profile-image' />
-            <h2>{userInfo.Last_name} {userInfo.Name}</h2>
+            <h2>{userInfo.last_name} {userInfo.name}</h2>
           </div>
           <div className='navigation'>
             <NavLink to="add-dawg" className="link">Add a Dawg</NavLink>
