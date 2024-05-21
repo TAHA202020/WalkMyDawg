@@ -3,6 +3,8 @@ const cors=require('cors');
 const cookieParser=require('cookie-parser');
 const middlewareauth=require("./middleware/middleware");
 const expressSession=require('express-session');
+
+const getUserRoute=require('./routes/getUserRoute');
 const loginRoute=require('./routes/loginRoute');
 const registerRoute=require('./routes/registerRoute');
 const logoutRoute=require('./routes/logoutRoute');
@@ -18,6 +20,9 @@ app.use(express.json());
 app.use("/api/register",registerRoute);
 app.use("/api/login",loginRoute);
 app.use("/api/logout",logoutRoute)
+app.use("/api/user-info",getUserRoute)
+
+
 app.get("/",middlewareauth,(req,res)=>
     {
         console.log("here")

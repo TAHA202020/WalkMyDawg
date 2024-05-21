@@ -82,3 +82,36 @@ input{
 {
     background-color: rgb(68, 68, 68);
 }
+.profile-info
+{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 30px;
+}
+.profile-image
+{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+.img-name
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.navigation
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
