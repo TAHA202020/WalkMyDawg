@@ -35,7 +35,8 @@
     text-align: start;
 }
 
-input{
+input[type="text"],
+input[type="password"]{
     outline: none;
     height: 30px;
     width: 100%;
@@ -137,3 +138,15 @@ input{
     flex-direction: column;
     gap: 10px;
 }
+input[type=file] {
+    display: none;
+  }
+label span {
+    padding: 8px 12px;
+    background: #000000;
+    color: #fff;
+    cursor: pointer;
+}
+label span:hover {
+    background: #313131;
+  }
