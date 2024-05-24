@@ -152,6 +152,7 @@ label span:hover {
 }
 .add-dawg
 {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -183,4 +184,32 @@ label span:hover {
     position: absolute;
     top: 0;
     right: 0;
+}
+.add-dawg-images
+{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px
+}
+
+.flex
+{
+    width: 25%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.flex-images
+{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
