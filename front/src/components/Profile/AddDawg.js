@@ -14,7 +14,7 @@ function AddDawg() {
     </div>
     <label for="images">
       <span>Choisir une image</span>
-      <input type='file' id='images' accept='image/*' onChange={(e)=>{setImagesObject([...imagesObject,URL.createObjectURL(e.target.files[0])])}} multiple />
+      <input type='file' id='images' accept='image/*' onChange={(e)=>{setImagesObject([...imagesObject,URL.createObjectURL(e.target.files[0])])}} />
     </label>
   </div>
   )

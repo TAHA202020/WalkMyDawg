@@ -165,7 +165,7 @@ label span:hover {
     justify-content: center;
     flex-direction: row;
     gap: 10px;
-    overflow: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     width: 50%;
     
