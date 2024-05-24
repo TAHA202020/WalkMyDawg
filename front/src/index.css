@@ -149,4 +149,38 @@ label span {
 }
 label span:hover {
     background: #313131;
-  }
+}
+.add-dawg
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.small-images
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    overflow: scroll;
+    overflow-y: hidden;
+    width: 50%;
+    
+}
+.small-image
+{
+    height: 100px;
+}
+.small-image-container
+{
+    position: relative;
+}
+.remove-image-btn
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
