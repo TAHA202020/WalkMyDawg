@@ -168,8 +168,25 @@ label span:hover {
     gap: 10px;
     overflow-x: auto;
     overflow-y: hidden;
-    width: 50%;
+    width: 100%;
     
+}
+.small-images::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+	background-color: #ffffff;
+}
+
+.small-images::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: #ffffff;
+}
+
+.small-images::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #ffffff;
 }
 .small-image
 {
@@ -187,6 +204,7 @@ label span:hover {
 }
 .add-dawg-images
 {
+    margin-top: 30px;
     width: 100%;
     display: flex;
     align-items: start;
