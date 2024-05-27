@@ -14,7 +14,6 @@ router.post("/",async (req,res)=>{
         if(result.length<=0) return res.send({error:"email doesn't exist exists"})
         let compareResult=await encryptPassword.comparePassword(req.body.password,result[0].pass_hash)
         if(compareResult){
-            console.log(result[0].id)
             req.session.user={id:result[0].id,email:result[0].email}
             
             res.send({response:"success",user:{name:result[0].name,last_name:result[0].last_name}})

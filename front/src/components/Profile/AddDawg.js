@@ -18,7 +18,7 @@ function AddDawg() {
         formData.append("images",image.file)
       })
       
-      fetch("http://localhost:4000/api/add-dawg", {method:"POST",body:formData}).then(res=>res.json()).then(data=>console.log(data))
+      fetch("http://localhost:4000/api/add-dawg", {method:"POST",body:formData ,credentials: "include"}).then(res=>res.json()).then(data=>console.log(data))
     }
   return (<div className='add-dawg'>
     <div className='flex'>
