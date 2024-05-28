@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react"
-export function useGetUser()
+export function useGetUser(setLoading)
 {
     const[userInfo,setUserInfo] =useState({})
 
@@ -13,8 +13,8 @@ export function useGetUser()
                 setUserInfo(data.userinfo)
             else
                 alert("something went wrong")
-        })}
-        ,[])
+        }).catch(err=>console.log(err)).finally(()=>{setLoading(false)})
+    },[])
 
     return {userInfo,setUserInfo}
 }
