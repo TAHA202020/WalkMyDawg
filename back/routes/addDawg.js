@@ -21,9 +21,12 @@ router.post("/",(req,res)=>
             file.mv(__dirname+"/../images/"+newFileName)
             filesNames.push('"'+newFileName+'"')
         })
-        connection.query("insert into dawgs (name,client_id,image) values ('"+req.body.name+ "','"+req.session.user.id+"','["+filesNames.join(",")+"]')",(err,result)=>{
+        let joinedFiles="["+filesNames.join(",")+"]"
+        //example :["43794b1b-a6de-4ac5-b412-51804b07161d.jpg","6b722cf9-1c55-4569-ac18-9becb97448c6.png","82d1bbd7-0308-4d53-b018-975ab800174f.jpg"]
+        connection.query("insert into dawgs (name,client_id,image) values ('"+req.body.name+ "','"+req.session.user.id+"','"+joinedFiles+"')",(err,result)=>{
             if(err) throw err
-            res.send({response:"success"})
+            console.log()
+            res.send({response:"success",dawg:{name:req.body.name,image:JSON.parse(joinedFiles)}})
         })
 })
 

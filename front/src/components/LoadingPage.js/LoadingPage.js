@@ -1,8 +1,9 @@
 import React from 'react'
 
 function LoadingPage() {
-  return (<>
-  </>
+  return (<div className='loader-container'>
+    <span class="loader"></span>
+  </div>
   )
 }
 

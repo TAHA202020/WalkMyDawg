@@ -6,6 +6,7 @@ import ProtectedDashboard from "./components/ProtectedRoute.js/ProtectedDashboar
 import ProtectedProfile from "./components/ProtectedRoute.js/ProtectedProfile";
 import AddDawg from "./components/Profile/AddDawg";
 import EditProfile from "./components/Profile/EditProfile";
+import MyDawgs from "./components/Profile/MyDawgs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<ProtectedDashboard/>} />
         <Route path="/logout" element={<Logout/>} />
         <Route path="/profile" element= {<ProtectedProfile/>}>
+          <Route path="" element={<MyDawgs/>}/>
           <Route path="edit" element={<EditProfile/>}/>
           <Route path="add-dawg" element={<AddDawg/>}/>
         </Route>

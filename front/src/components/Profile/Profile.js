@@ -8,7 +8,7 @@ export const UserInfoContext=React.createContext()
 function Profile() {
   const [loading,setLoading]=useState(true)
   const {userInfo,setUserInfo} =useGetUser(setLoading);
-  if(loading) return LoadingPage
+  if(loading) return <LoadingPage/>
   return (<UserInfoContext.Provider value={{userInfo,setUserInfo}}>
         <SimpleNavbar/>
         <div className='profile-info'>

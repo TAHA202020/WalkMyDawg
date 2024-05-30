@@ -9,6 +9,7 @@ export function useGetUser(setLoading)
         fetch("http://localhost:4000/api/user-info", {method:"GET",headers: {"Content-Type": "application/json"}, credentials: "include"})
         .then(res=>res.json())
         .then(data=>{
+            console.log(data)
             if(data.message==="success")
                 setUserInfo(data.userinfo)
             else

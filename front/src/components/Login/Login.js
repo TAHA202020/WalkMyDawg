@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useIsAuth } from '../../hooks/useIsAuth'
+import LoadingPage from '../LoadingPage.js/LoadingPage'
 function Login() {
     const navigate=useNavigate()
     const [cdls, setCredentials] = useState({email: "", password: ""})
@@ -23,7 +24,7 @@ function Login() {
         }
     }
     if(loading)
-        return null
+        return <LoadingPage />
   return (
     <div className='login-container'>
         <div className='login'>

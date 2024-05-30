@@ -1,5 +1,9 @@
-import React,{useState ,useRef} from 'react'
+import React,{useState ,useRef , useContext} from 'react'
+import { UserInfoContext } from './Profile';
 function AddDawg() {
+
+
+  const {userInfo,setUserInfo} =useContext(UserInfoContext);
   const dawgName=useRef()
   const[imagesObject,setImagesObject]=useState([])
   const removebyIndex=(index)=>{
@@ -18,7 +22,16 @@ function AddDawg() {
         formData.append("images",image.file)
       })
       
-      fetch("http://localhost:4000/api/add-dawg", {method:"POST",body:formData ,credentials: "include"}).then(res=>res.json()).then(data=>console.log(data))
+      fetch("http://localhost:4000/api/add-dawg", {method:"POST",body:formData ,credentials: "include"}).then(res=>res.json()).then(data=>{
+        dawgName.current.value=""
+        imagesObject.map((image,index)=>{URL.revokeObjectURL([image])})
+        setImagesObject([])
+        //setContext
+        let copyUserInfo={...userInfo}
+        copyUserInfo.dawgs=[...copyUserInfo.dawgs,data.dawg]
+        setUserInfo(copyUserInfo)
+
+      })
     }
   return (<div className='add-dawg'>
     <div className='flex'>
