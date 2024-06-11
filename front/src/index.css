@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .login-container
 {
@@ -257,4 +258,27 @@ label span:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.dawg-card
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.rsis-image {
+    background-size: contain !important;
+    background-repeat:no-repeat ;
+  }
+.image-carousel
+{
+    object-fit: contain;
+    width: 340px;
+    height: 350px;
+    background-color: #000000;
+}
+canvas
+{
+    display: none;
 }

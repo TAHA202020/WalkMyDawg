@@ -14,6 +14,10 @@ const AddDawg=require('./routes/addDawg')
 //App
 const app=express();
 
+app.use("/images",express.static(__dirname+"/images"));
+
+
+
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.disable('x-powered-by');
 app.use(expressSession({secret:'fgqseghsedjikghsikughszeuioghekzjsghezio',saveUninitialized:true,resave:true}));
