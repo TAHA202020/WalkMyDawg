@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body
+{
+
     overflow-x: hidden;
 }
 .login-container
@@ -278,7 +282,19 @@ label span:hover {
     height: 350px;
     background-color: #000000;
 }
-canvas
+.mydawgs-container
 {
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+.mydawgs
+{
+    margin-top: 20px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+
 }

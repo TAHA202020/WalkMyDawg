@@ -5,10 +5,14 @@ function MyDawgs() {
 
     const  {userInfo,setUserInfo} =useContext(UserInfoContext);
   return (<>
-    <div>MyDawgs</div>
+    <div className='mydawgs'>
+    <div className='mydawgs-container'>
     {userInfo.dawgs.map((dawg)=>{
       return <DawgCard  name={dawg.name} image={dawg.image} />
     })}
+    </div>
+    </div>
+    
     </>
   )
 }

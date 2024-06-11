@@ -1,6 +1,5 @@
 import React from 'react'
 import {Carousel} from "antd"
-import "antd/dist/reset.css";
 function DawgCard({name,image}) {
   return (
     <div>
